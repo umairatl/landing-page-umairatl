@@ -10,7 +10,6 @@ import LetsConnect from "./LetsConnect";
 import Recommendations from "./Recommendation";
 import Footer from "./Footer";
 import { makeStyles } from "tss-react/mui";
-// import background from "../asset/img/testBackground.png";
 import background from "../asset/img/crumplePaper2.jpg";
 
 const useStyles = makeStyles()((theme) => ({

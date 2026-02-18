@@ -12,14 +12,12 @@ export const WORK_EXPERIENCE = [
     period: "Aug 2024 – Current",
     isCurrent: true,
     details: {
-      project: "Maybank",
+      project: "Maybank - Fraud & Resilience",
       description: [
-        "Worked on core features for a new enhancement of the MAE digital banking app using React Native, with Xcode and Android Studio for iOS and Android development.",
-        "Delivered an upgraded Secure2u (S2U)-enabled transaction flow with improved security and service logic, leveraging a newly integrated backend service.",
-        "Supported enhancements for m2u push notifications, 2FA, RSA authentication, and fallback handling across main transfer flows and services.",
-        "Actively involved in the development lifecycle, supporting SIT, UAT, Pentesting.",
+        "Worked on the MAE digital banking app using React Native, Xcode, and Android Studio, contributing to the integration of a Secure2u (S2U)-enabled transaction flow with improved security and service logic, leveraging a newly integrated backend service.",
+        "Supported enhancements to m2u push notifications, two-factor authentication (2FA), RSA authentication, and fallback handling across main transfer flows as part of S2U security initiatives.",
       ],
-      techStack: "React Native, TypeScript, Xcode, Android Studio, Git",
+      techStack: "React Native, Xcode, Android Studio",
     },
   },
   {
@@ -35,7 +33,8 @@ export const WORK_EXPERIENCE = [
         "Collaborated with cross-functional teams in an Agile environment, focusing on sprint planning, stand-ups, and retrospectives.",
         "Consistently maintained a completion rate of 70% to 100% for assigned tickets within two-week sprints, ensuring high productivity and timely project delivery.",
       ],
-      techStack: "ReactJs, NextJs, Mui, Strapi CMS, GitHub, Restful API",
+      techStack:
+        "ReactJs, NextJs, Material Ui, Strapi CMS, GitHub, Restful API",
     },
   },
   {

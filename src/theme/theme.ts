@@ -54,23 +54,6 @@ const theme = createTheme({
         },
       },
     },
-    // MuiPaper: {
-    //   variants: [
-    //     {
-    //       props: { variant: "letter" },
-    //       style: {
-    //         borderRadius: "2px",
-    //         boxShadow:
-    //           "0 8px 24px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.06)",
-    //         backgroundImage: "url('/crumplePaper2.jpg')",
-    //         backgroundSize: "cover",
-    //         backgroundPosition: "center",
-    //         padding: "32px",
-    //         overflowY: "auto",
-    //       },
-    //     },
-    //   ],
-    // },
     MuiButton: {
       variants: [
         {
@@ -99,9 +82,9 @@ const theme = createTheme({
             fontSize: 12,
             padding: "6px 24px",
             fontWeight: 600,
-            backgroundColor: "#697e50", // Using rgba for transparency
+            backgroundColor: "#697e50",
             "&:hover": {
-              backgroundColor: "none",
+              backgroundColor: "transparent",
               color: "#fff",
               borderColor: "#697e50",
             },

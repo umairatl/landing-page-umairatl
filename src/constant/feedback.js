@@ -1,11 +1,3 @@
-import tow from "../asset/img/tow.png";
-import junyan from "../asset/img/junyan.png";
-import dharsh from "../asset/img/dharsh.png";
-import siyu from "../asset/img/siyu.png";
-import nic from "../asset/img/nic.png";
-import derrick from "../asset/img/derrick.png";
-import mino from "../asset/img/mino.png";
-import clement from "../asset/img/clement.png";
 import feedbackImg from "../asset/img/feedbackImg.png";
 
 export const feedback = [

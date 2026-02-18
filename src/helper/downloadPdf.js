@@ -1,8 +1,8 @@
-import pdfLink from "../asset/file/resume-2025.pdf";
+import pdfLink from "../asset/file/resume-2026.pdf";
 
 export const downloadPDF = () => {
   var link = document.createElement("a");
   link.href = pdfLink;
-  link.download = "Umairatul 2025 Resume.pdf";
+  link.download = "Umairatul 2026 Resume.pdf";
   link.dispatchEvent(new MouseEvent("click"));
 };

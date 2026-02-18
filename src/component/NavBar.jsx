@@ -16,7 +16,6 @@ const useStyles = makeStyles()((theme) => ({
     borderLeft: "3px solid #697e50",
     borderRadius: "50px",
     padding: "0.8rem 2rem",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
     boxShadow: "0 6px 20px rgba(105, 126, 80, 0.15)",
     transition: "all 0.3s ease",
 
@@ -72,18 +71,6 @@ const useStyles = makeStyles()((theme) => ({
     },
   },
 
-  // Animated underline
-  // linkUnderline: {
-  //   position: "absolute",
-  //   bottom: 3,
-  //   left: "50%",
-  //   transform: "translateX(-50%)",
-  //   width: 0,
-  //   height: "2px",
-  //   background: "#A10142",
-  //   transition: "width 0.3s ease",
-  // },
-
   // CV button special style
   cvButton: {
     background: "linear-gradient(135deg, #A10142 0%, #8a0136 100%)",
@@ -98,9 +85,6 @@ const useStyles = makeStyles()((theme) => ({
       transform: "translateY(-2px)",
       boxShadow: "0 4px 12px rgba(161, 1, 66, 0.3)",
 
-      "& $linkUnderline": {
-        width: 0,
-      },
     },
   },
 }));
@@ -124,7 +108,6 @@ const NavBar = () => {
   };
 
   return (
-    // <Box>
     <ContentSize>
       <Grid
         container
@@ -171,7 +154,6 @@ const NavBar = () => {
                   >
                     {res.title}
                   </Typography>
-                  {/* {!isCVButton && <Box className={classes.linkUnderline} />} */}
                 </Box>
               );
             })}
@@ -179,7 +161,6 @@ const NavBar = () => {
         </Grid>
       </Grid>
     </ContentSize>
-    // </Box>
   );
 };
 

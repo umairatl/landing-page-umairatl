@@ -116,7 +116,6 @@ export default function MobileNavbar() {
             <MenuItem
               key={index}
               onClick={() => onClickLink(res.link)}
-              // sx={{ py: 1.5 }}
             >
               <Typography sx={{ fontFamily: "'Patrick Hand', cursive" }}>
                 {res.title}

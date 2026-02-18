@@ -1,20 +1,20 @@
 import Amiibo from "../asset/img/amiibo.png";
 import CryptownImg1 from "../asset/img/cryptownImg1.png";
-import KingKongFood from "../asset/img/kingkongfood.png";
 import Yummly from "../asset/img/mobDev.png";
 import MoneyMatch from "../asset/img/moneymatchco.png";
-import LandingPage from "../asset/img/portfolio.png";
 import Mobile1 from "../asset/img/reactnative.png";
+import CCRisk from "../asset/img/project-cc-risk.png";
 
 export const PROJECTS_LIST = [
   {
-    img: KingKongFood,
-    website: "Risk Assessment Credit Card System",
-    subtitle: "Coming soon...",
-    linkType: "Github Repository",
-    repo: "https://drive.google.com/file/d/1Rxe2N-oE_xOPViz8wvLT6Zi776BxS7rn/view?usp=sharing",
+    img: CCRisk,
+    website: "Credit Card Risk Assessment System",
+    subtitle:
+      "Built a simulated credit card monitoring and risk assessment system that streams transactions in real time, evaluates spending behaviour and utilization thresholds, automatically flags risky activity, and allows users to control card access (block, unblock, limits).",
+    linkType: "Live app",
+    repo: "https://credit-card-risk-assessment.vercel.app/",
     period: "2026",
-    stack: ["ReactJs", "NodeJs", "ExpressJs", "MongoDB"],
+    stack: ["ReactJs", "Material UI", "Typescript"],
   },
   {
     img: Mobile1,
@@ -24,7 +24,7 @@ export const PROJECTS_LIST = [
     linkType: "Github Repository",
     repo: "https://github.com/umairatl/employee_app",
     period: "2024",
-    stack: ["React Native", "Firebase"],
+    stack: ["React Native"],
   },
   {
     img: MoneyMatch,
@@ -44,44 +44,26 @@ export const PROJECTS_LIST = [
     linkType: "Github Repository",
     repo: "https://github.com/umairatl/cryptown-web",
     period: "2022",
-    stack: ["ReactJs", "NodeJs", "ExpressJs", "MongoDB"],
+    stack: ["ReactJs", "AOS", "AWS"],
   },
   {
     img: Amiibo,
-    website: "Amiibo Series Web App (FE Hackathon)",
+    website: "Amiibo Series Web App ",
     subtitle:
       "Group project, an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
-    linkType: "Live app",
-    repo: "https://team3b-fe-hackathon1-1ihi05joa-akmal21hakim.vercel.app/",
+    linkType: "Github repository",
+    repo: "https://github.com/umairatl/besquare-fe-hackathon",
     period: "2022",
-    stack: ["ReactJs", "Tailwind CSS"],
+    stack: ["ReactJs", "Amiibo API"],
   },
   {
     img: Yummly,
-    website: "Food Recipe App (Mobile Hackathon)",
+    website: "Food Recipe App ",
     subtitle:
       "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
     linkType: "Github Repository",
-    repo: "https://github.com/umairatl/MobDevProject_GroupE",
+    repo: "https://github.com/umairatl/team3b-FEhackathon",
     period: "2022",
     stack: ["Flutter", "Dart", "Yummly Rapid API"],
-  },
-  // {
-  //   img: KingKongFood,
-  //   website: "KingKongFood Web App (FYP)",
-  //   subtitle:
-  //     "A comprehensive food ordering platform. It supports product browsing, order tracking, and specialized catering booking. I achieved a score of 70/100 for this project",
-  //   linkType: "Test result",
-  //   repo: "https://drive.google.com/file/d/1Rxe2N-oE_xOPViz8wvLT6Zi776BxS7rn/view?usp=sharing",
-  //   period: "2021",
-  // },
-  {
-    img: LandingPage,
-    website: "Landing Page",
-    subtitle: "Responsive ReactJs app for interview purpose",
-    linkType: "Github repository",
-    repo: "https://github.com/umairatl/umairatl",
-    period: "2024",
-    stack: ["ReactJs", "MUI"],
   },
 ];

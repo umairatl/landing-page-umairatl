@@ -175,7 +175,7 @@ const Recommendations = () => {
                     cursor: "pointer",
                     whiteSpace: "nowrap", // This prevents LinkedIn and the icon from splitting
                   }}
-                  onClick={() => window.open("YOUR_LINKEDIN_URL", "_blank")}
+                  onClick={() => window.open("https://www.linkedin.com/in/umairatul-asyiqin-1b43271a8/", "_blank")}
                 >
                   LinkedIn
                   <LaunchIcon

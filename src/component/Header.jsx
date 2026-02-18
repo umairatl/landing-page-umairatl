@@ -1,7 +1,6 @@
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import Img from "../asset/img/header8.png";
-// import MobileImg from "../asset/img/mobileBanner.svg";
 import MobileImg from "../asset/img/mobileHeaderBanner.png";
 import { ContentSize } from "./shared/ContentSize";
 

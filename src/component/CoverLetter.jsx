@@ -1,17 +1,10 @@
-import {
-  Box,
-  Button,
-  Typography,
-  Paper,
-  Grid,
-  Chip,
-  Stack,
-} from "@mui/material";
+import { Box, Button, Typography, Grid, Chip, Stack } from "@mui/material";
 import Img from "../asset/img/coverLetterImg.png";
-// import crumplePaper from "../asset/img/crumplePaper2.jpg";
 import crumplePaper from "../asset/img/coverLetterBackground.png";
 import { makeStyles } from "tss-react/mui";
 import bgImg from "../asset/img/background.png";
+import { MAIN_SKILLS } from "../constant/skills";
+import { PROJECTS_LIST } from "../constant/projects";
 
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
@@ -43,25 +36,11 @@ const useStyles = makeStyles()((theme) => ({
       backgroundSize: "405px 900px",
     },
   },
-  quickPickBox: {
-    // background: "pink",
-    bgcolor: "rgba(255, 255, 255, 0.7)",
-    backdropFilter: "blur(5px)",
-    border: "1px dashed rgba(105, 126, 80, 0.3)",
-    borderRadius: 1,
-    p: 2,
-    mb: 3,
-    textAlign: "left",
-    [theme.breakpoints.down("sm")]: {
-      // width: "80%",
-      // height: "70%",
-    },
-  },
 }));
 
 export default function CoverLetter({ onOpen }) {
-  const skills = ["ReactJs", "NextJs", "React Native", "AngularJs"];
-  const projectCount = 8;
+  const skills = ["RectJS/Native", "NextJs", "AngularJs", "Typescript"];
+  const projectCount = PROJECTS_LIST.length;
   const { classes } = useStyles();
 
   return (
@@ -71,7 +50,7 @@ export default function CoverLetter({ onOpen }) {
         inset: 0,
         backgroundImage: `url(${bgImg})`,
         backgroundRepeat: "repeat",
-        backgroundSize: "250px 250px", // adjust tile size
+        backgroundSize: "250px 250px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -133,7 +112,7 @@ export default function CoverLetter({ onOpen }) {
                   mb: 1,
                 }}
               >
-                Welcome to my humble swamp,
+                Welcome to my little corner of the web
               </Typography>
 
               <Typography
@@ -195,7 +174,7 @@ export default function CoverLetter({ onOpen }) {
                         color: "#697e50",
                       }}
                     >
-                      {projectCount}+
+                      {projectCount - 1}+
                     </Typography>
                   </Box>
 
@@ -209,7 +188,7 @@ export default function CoverLetter({ onOpen }) {
                         mb: 0.5,
                       }}
                     >
-                      FE Tech Stack
+                      Tech Stack / Tools
                     </Typography>
                     <Stack
                       direction="row"
@@ -261,28 +240,6 @@ export default function CoverLetter({ onOpen }) {
             </Grid>
           </Grid>
         </Box>
-
-        {/* Stamp */}
-        {/* <Box
-          sx={{
-            position: "absolute",
-            top: 8,
-            right: 20,
-            width: 50,
-            height: 50,
-            bgcolor: "#A10142",
-            border: "2px solid rgba(0,0,0,0.1)",
-            borderRadius: "2px",
-            zIndex: 4,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "20px",
-            boxShadow: "0 2px 8px rgba(161, 1, 66, 0.3)",
-          }}
-        >
-          📮
-        </Box> */}
       </Box>
     </Box>
   );
