@@ -12,10 +12,16 @@ export const WORK_EXPERIENCE = [
     period: "Aug 2024 – Current",
     isCurrent: true,
     details: {
-      project: "Maybank - Fraud & Resilience",
       description: [
+        "Participated in internal training programs covering React JS/Native, mobile security best practices, and explored Generative AI tools to streamline development workflows, automate repetitive tasks, and enhance frontend prototyping.",
+        "Developed banking-focused proof-of-concept applications and internal demos leveraging AI and frontend training learnings.",
+        "Contributed to Accenture CSR initiatives supporting community programs and corporate social responsibility projects.",
+      ],
+      project: "Banking - Maybank (Oct 2024-Dec 2025)",
+      projectDesc: [
         "Worked on the MAE digital banking app using React Native, Xcode, and Android Studio, contributing to the integration of a Secure2u (S2U)-enabled transaction flow with improved security and service logic, leveraging a newly integrated backend service.",
         "Supported enhancements to m2u push notifications, two-factor authentication (2FA), RSA authentication, and fallback handling across main transfer flows as part of S2U security initiatives.",
+        "Involved in the entire development lifecycle supporting SIT, UAT, Pentesting, Deployment",
       ],
       techStack: "React Native, Xcode, Android Studio",
     },
@@ -28,8 +34,8 @@ export const WORK_EXPERIENCE = [
     period: "Feb 2023 – Apr 2024",
     details: {
       description: [
-        "Spearheaded the full-scale development of moneymatch.co from an initial boilerplate into a comprehensive, SEO-optimized platform using Next.js and Strapi CMS.",
-        "Enhanced the fintech platform by developing and integrating Orbit Flow with React.js, aimed at increasing user engagement and streamlining remittance handling processes.",
+        "Built landing pages for moneymatch.co with Next.js and Strapi CMS, focusing on SEO, responsive design and content scalability.",
+        "Developed and integrated Orbit Flow with React.js, implementing remittance-related features to support user interaction and platform functionality.",
         "Collaborated with cross-functional teams in an Agile environment, focusing on sprint planning, stand-ups, and retrospectives.",
         "Consistently maintained a completion rate of 70% to 100% for assigned tickets within two-week sprints, ensuring high productivity and timely project delivery.",
       ],

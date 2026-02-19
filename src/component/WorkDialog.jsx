@@ -29,11 +29,11 @@ const WorkDialog = ({ details, handleClose }) => {
             <strong>Company:</strong> {company} ({period})
           </Typography>
 
-          {detailInfo.project && (
+          {/* {detailInfo.project && (
             <Typography variant="body2" sx={{ mt: 1 }}>
               <strong>Project:</strong> {detailInfo.project}
             </Typography>
-          )}
+          )} */}
 
           <Typography variant="body2" sx={{ mt: 1, fontWeight: "bold" }}>
             Description:
@@ -45,6 +45,25 @@ const WorkDialog = ({ details, handleClose }) => {
               </li>
             ))}
           </ul>
+
+          {/* project related section */}
+          {detailInfo.project && (
+            <>
+              <Typography variant="body2" sx={{ mt: 1 }}>
+                <strong>Project 1:</strong> {detailInfo.project}
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1, fontWeight: "bold" }}>
+                Description:
+              </Typography>
+              <ul>
+                {detailInfo.projectDesc.map((desc, i) => (
+                  <li key={i}>
+                    <Typography variant="body2">{desc}</Typography>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <Typography variant="body2" sx={{ mt: 1 }}>
             <strong>Tech Stack:</strong> {detailInfo.techStack}
