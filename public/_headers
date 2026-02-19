@@ -1,0 +1,41 @@
+/\*
+
+# Block site from being embedded in iframes (clickjacking protection)
+
+X-Frame-Options: DENY
+
+# Stop browsers from guessing file types (MIME-sniffing attacks)
+
+X-Content-Type-Options: nosniff
+
+# Only send the origin (no path) in the Referer header when following external links
+
+Referrer-Policy: strict-origin-when-cross-origin
+
+# Disable browser features this site never uses
+
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# Force HTTPS for 1 year, including subdomains
+
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Content Security Policy — controls exactly what can load on site
+
+# - script-src 'self' → only own bundled JS (no external scripts)
+
+# - style-src 'unsafe-inline' → required by MUI/emotion (injects <style> tags)
+
+# - font-src fonts.gstatic.com → Google Fonts files
+
+# - img-src data: blob: → MUI uses data URIs for some icons
+
+# - connect-src formspree.io → contact form submissions
+
+# - frame-ancestors 'none' → same as X-Frame-Options but for modern browsers
+
+# - base-uri 'self' → prevents base-tag hijacking
+
+# - form-action 'self' formspree.io → only allow forms to submit to these targets
+
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io

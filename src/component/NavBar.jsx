@@ -1,6 +1,7 @@
-import { Grid, Link, Stack, Typography, Box } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import img from "../asset/img/header2.png";
+// import img from "../asset/img/header2.png";
+import img from "../asset/img/headerImg2.png";
 import { NAVBAR_OPTONS } from "../constant/navbar";
 import { downloadPDF } from "../helper/downloadPdf";
 import { ContentSize } from "./shared/ContentSize";
@@ -13,7 +14,7 @@ const useStyles = makeStyles()((theme) => ({
     borderTop: "1px dashed #697e50",
     borderRight: "1px dashed #697e50",
     borderBottom: "3px solid #697e50",
-    borderLeft: "3px solid #697e50",
+    borderLeft: "3px solid #69S7e50",
     borderRadius: "50px",
     padding: "0.8rem 2rem",
     boxShadow: "0 6px 20px rgba(105, 126, 80, 0.15)",
@@ -84,7 +85,6 @@ const useStyles = makeStyles()((theme) => ({
       background: "linear-gradient(135deg, #8a0136 0%, #A10142 100%)",
       transform: "translateY(-2px)",
       boxShadow: "0 4px 12px rgba(161, 1, 66, 0.3)",
-
     },
   },
 }));

@@ -17,7 +17,7 @@ const useStyles = makeStyles()((theme) => ({
     width: "100%",
     height: "200px",
     objectFit: "cover",
-    filter: "brightness(0.4)",
+    filter: "brightness(0.7)",
     position: "relative",
     [theme.breakpoints.down("md")]: {
       height: "180px",

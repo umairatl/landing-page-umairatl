@@ -30,7 +30,7 @@ export const PROJECTS_LIST = [
     img: MoneyMatch,
     website: "MoneyMatch.co",
     subtitle:
-      "Contributed to the development of the web and mobile-optimized pages for moneymatch.co using Next.js and Strapi CMS. Played a key role in crafting the solution from its inception, ensuring thorough attention to SEO optimizations.",
+      "Built web and mobile-friendly landing pages for moneymatch.co using Next.js and Strapi CMS, focusing on SEO from the ground up",
     linkType: "Live app",
     repo: "https://moneymatch.co/",
     period: "2024",

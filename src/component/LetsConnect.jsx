@@ -88,6 +88,7 @@ const useStyles = makeStyles()((theme) => ({
 
     "&:hover": {
       background: "#697E50",
+      color: "white",
       transform: "translateY(-1px)",
     },
 

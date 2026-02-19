@@ -38,7 +38,8 @@ const Footer = () => {
       >
         <Grid item>
           <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-            © 2026 Designed and developed by me. Built with ReactJs, MUI, AOS
+            © 2026 Designed and developed by umairatl. Built with ReactJs, MUI,
+            AOS
           </Typography>
         </Grid>
         <Grid item>

@@ -1,4 +1,5 @@
-import { Button, Grid, Stack, Typography } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import Img from "../asset/img/header8.png";
 import MobileImg from "../asset/img/mobileHeaderBanner.png";
@@ -12,10 +13,6 @@ const useStyles = makeStyles()((theme) => ({
       padding: "11px 0px",
     },
   },
-  img: {
-    width: "100%",
-    height: "100%",
-  },
   wrapGridHeader: {
     flexDirection: "row",
     marginTop: 25,
@@ -24,16 +21,64 @@ const useStyles = makeStyles()((theme) => ({
       marginTop: 0,
     },
   },
+
   stackBtn: {
     flexDirection: "row",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },
   },
+
+  // Reserves rough space before the image loads, then expands to natural size
+  imgContainer: {
+    position: "relative", // needed for the overlay to anchor to
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(208, 222, 199, 0.2)",
+    borderRadius: "16px",
+    border: "1.5px dashed rgba(105, 126, 80, 0.35)",
+    [theme.breakpoints.down("md")]: {
+      overflow: "hidden",
+      marginBottom: "40px",
+    },
+  },
+
+  // Transparent layer that sits above the image.
+  // Right-clicking it shows the generic page menu (no "Save image as").
+  imgOverlay: {
+    position: "absolute",
+    inset: 0,
+    zIndex: 1,
+    cursor: "default",
+    userSelect: "none",
+    WebkitUserSelect: "none",
+  },
+
+  img: {
+    // Desktop: full natural size, no crop
+    width: "100%",
+    height: "auto",
+    display: "block",
+    borderRadius: "14px",
+    opacity: 0,
+    transition: "opacity 0.5s ease",
+    // Mobile: fixed height with cover so the banner fills the box
+    [theme.breakpoints.down("md")]: {
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "top",
+      borderRadius: 0,
+    },
+  },
+
+  imgVisible: {
+    opacity: 1,
+  },
 }));
 
 const Header = () => {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <ContentSize>
@@ -42,6 +87,7 @@ const Header = () => {
         justifyContent="space-between"
         className={classes.wrapGridHeader}
       >
+        {/* Text content */}
         <Grid item md={6} xs={12}>
           <Grid
             container
@@ -50,25 +96,47 @@ const Header = () => {
             rowGap={2}
             sx={{ height: "100%" }}
           >
-            <Typography variant="h6" sx={{ color: "#A10142" }}>
+            <Typography
+              variant="h6"
+              sx={{ color: "#A10142" }}
+              data-aos="fade-right"
+              data-aos-duration={500}
+            >
               About me 🎀:
             </Typography>
-            <Typography variant="subtitle1">
-              People called me Begum...ofcourse in any pronunciation they
-              prefer. Passionate about building frontend web and mobile apps
-              with React, React Native, and Next.js. Currently learning &
-              exploring native mobile and java backend (mostly learning,
-              experimenting, and occasionally confusing myself for sure).
+
+            <Typography
+              variant="subtitle1"
+              data-aos="fade-right"
+              data-aos-duration={500}
+              data-aos-delay={100}
+            >
+              People call me Umaira/Begum...of course in any pronunciation they
+              prefer. I'm passionate about building frontend web and mobile apps
+              with React, React Native, and Next.js. Currently exploring java
+              spring boot and native mobile (mostly learning, experimenting, and
+              occasionally confusing myself).
             </Typography>
-            <Typography variant="subtitle1" color="#595959">
-              Outside of code, I write, I enjoy 8oz matcha a lot 🍵, and I roam
-              malls for no particular reason especially the ones with rooftops.
+
+            <Typography
+              variant="subtitle1"
+              color="#595959"
+              data-aos="fade-right"
+              data-aos-duration={500}
+              data-aos-delay={200}
+            >
+              Outside of code, I write, I enjoy 8oz matcha a lot 🍵, and I like
+              to wander malls with parks or rooftops just for the fun of it.
             </Typography>
-            <Stack className={classes.stackBtn} columnGap={1} rowGap={3}>
+            <Stack
+              className={classes.stackBtn}
+              columnGap={1}
+              rowGap={3}
+              data-aos="fade-up"
+              data-aos-duration={500}
+              data-aos-delay={300}
+            >
               <Button
-                data-aos="fade-up"
-                data-aos-duration={500}
-                data-aos-easing="ease-in-out"
                 href="#Projects"
                 variant="contained"
                 className={classes.btn}
@@ -76,10 +144,6 @@ const Header = () => {
                 See my projects
               </Button>
               <Button
-                data-aos="fade-up"
-                data-aos-duration={500}
-                data-aos-easing="ease-in-out"
-                // onClick={downloadPDF}
                 href="#Connect"
                 variant="outlined"
                 className={classes.btn}
@@ -89,11 +153,31 @@ const Header = () => {
             </Stack>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={5}>
-          <picture>
-            <source media="(min-width: 768px)" srcSet={Img} />
-            <img src={MobileImg} className={classes.img} alt="profile img" />
-          </picture>
+
+        {/* Image — space reserved before load, fades in when ready */}
+        <Grid item xs={12} md={5} data-aos="fade-left" data-aos-duration={600}>
+          <Box className={classes.imgContainer}>
+            <picture>
+              <source media="(min-width: 768px)" srcSet={Img} />
+              <img
+                src={MobileImg}
+                className={cx(classes.img, imgLoaded && classes.imgVisible)}
+                alt="profile banner"
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                onLoad={() => setImgLoaded(true)}
+              />
+            </picture>
+
+            {/* Transparent overlay — intercepts right-click so browser shows the
+                generic page menu instead of the image "Save image as" option */}
+            <Box
+              className={classes.imgOverlay}
+              onContextMenu={(e) => e.preventDefault()}
+            />
+          </Box>
         </Grid>
       </Grid>
     </ContentSize>

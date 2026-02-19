@@ -1,9 +1,10 @@
+import { useState, useRef, useEffect } from "react";
 import { Box, Button, Typography, Grid, Chip, Stack } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Img from "../asset/img/coverLetterImg.png";
 import crumplePaper from "../asset/img/coverLetterBackground.png";
 import { makeStyles } from "tss-react/mui";
 import bgImg from "../asset/img/background.png";
-import { MAIN_SKILLS } from "../constant/skills";
 import { PROJECTS_LIST } from "../constant/projects";
 
 const useStyles = makeStyles()((theme) => ({
@@ -36,12 +37,58 @@ const useStyles = makeStyles()((theme) => ({
       backgroundSize: "405px 900px",
     },
   },
+
+  scrollHint: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 64,
+    background:
+      "linear-gradient(to bottom, transparent, rgba(230, 225, 210, 0.85))",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingBottom: 6,
+    pointerEvents: "none",
+    zIndex: 2,
+    borderRadius: "0 0 4px 4px",
+    transition: "opacity 0.4s ease",
+  },
+
+  bounceIcon: {
+    color: "#697e50",
+    animation: "$nudge 1.6s ease-in-out infinite",
+  },
+
+  "@keyframes nudge": {
+    "0%, 100%": { transform: "translateY(0)" },
+    "50%": { transform: "translateY(4px)" },
+  },
 }));
 
+const skills = ["RectJS/Native", "NextJs", "AngularJs", "Typescript"];
+
 export default function CoverLetter({ onOpen }) {
-  const skills = ["RectJS/Native", "NextJs", "AngularJs", "Typescript"];
   const projectCount = PROJECTS_LIST.length;
   const { classes } = useStyles();
+
+  const [showHint, setShowHint] = useState(false);
+  const wrapBoxRef = useRef(null);
+
+  // Only show the hint if the content actually overflows the card
+  useEffect(() => {
+    const el = wrapBoxRef.current;
+    if (el) setShowHint(el.scrollHeight > el.clientHeight);
+  }, []);
+
+  const handleScroll = () => {
+    const el = wrapBoxRef.current;
+    if (!el) return;
+    const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 16;
+    if (nearBottom) setShowHint(false);
+  };
 
   return (
     <Box
@@ -83,7 +130,7 @@ export default function CoverLetter({ onOpen }) {
         },
       }}
     >
-      {/* Envelope Container */}
+      {/* Card */}
       <Box
         sx={{
           position: "relative",
@@ -91,8 +138,12 @@ export default function CoverLetter({ onOpen }) {
           height: { xs: 480, sm: 560 },
         }}
       >
-        {/* Letter/Paper inside envelope with crumpled paper texture */}
-        <Box className={classes.wrapBox}>
+        {/* Scrollable content */}
+        <Box
+          ref={wrapBoxRef}
+          className={classes.wrapBox}
+          onScroll={handleScroll}
+        >
           <Grid
             container
             direction="row"
@@ -106,11 +157,7 @@ export default function CoverLetter({ onOpen }) {
             <Grid item xs={12}>
               <Typography
                 variant="subtitle1"
-                sx={{
-                  opacity: 0.7,
-                  letterSpacing: "0.02em",
-                  mb: 1,
-                }}
+                sx={{ opacity: 0.7, letterSpacing: "0.02em", mb: 1 }}
               >
                 Welcome to my little corner of the web
               </Typography>
@@ -154,7 +201,6 @@ export default function CoverLetter({ onOpen }) {
                 </Typography>
 
                 <Stack spacing={1.5}>
-                  {/* Project Count */}
                   <Box>
                     <Typography
                       variant="caption"
@@ -178,7 +224,6 @@ export default function CoverLetter({ onOpen }) {
                     </Typography>
                   </Box>
 
-                  {/* Skills */}
                   <Box>
                     <Typography
                       variant="caption"
@@ -240,6 +285,16 @@ export default function CoverLetter({ onOpen }) {
             </Grid>
           </Grid>
         </Box>
+
+        {/* Scroll hint — gradient fade + bouncing arrow, hidden once user reaches bottom */}
+        {showHint && (
+          <Box className={classes.scrollHint}>
+            <KeyboardArrowDownIcon
+              fontSize="small"
+              className={classes.bounceIcon}
+            />
+          </Box>
+        )}
       </Box>
     </Box>
   );

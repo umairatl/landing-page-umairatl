@@ -69,8 +69,8 @@ const theme = createTheme({
             background: "white",
             backdropFilter: "blur(10px)",
             "&:hover": {
-              background: "rgba(255, 255, 255, 0.8)",
-              borderColor: "#A10142",
+              color: "rgba(255, 255, 255, 0.8)",
+              background: "#A10142",
             },
           },
         },
@@ -84,9 +84,9 @@ const theme = createTheme({
             fontWeight: 600,
             backgroundColor: "#697e50",
             "&:hover": {
-              backgroundColor: "transparent",
-              color: "#fff",
-              borderColor: "#697e50",
+              background: "#fff",
+              color: "#697e50",
+              border: "1px solid #697e50",
             },
           },
         },

@@ -12,12 +12,7 @@ const useStyles = makeStyles()((theme) => ({
     position: "relative",
     display: "inline-block",
     padding: "0.5rem 1.5rem",
-    // background: "rgba(255, 255, 255, 0.8)",
-    // border: "2px dashed #697e50",
-    // borderRadius: "20px",
     marginBottom: "1rem",
-    // boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-    // backdropFilter: "blur(5px)",
 
     "&::before": {
       content: '""',
@@ -41,12 +36,10 @@ const useStyles = makeStyles()((theme) => ({
     borderBottom: "2px solid #697e50",
     borderTop: "2px dashed #697e50",
     borderRight: "2px dashed #697e50",
-
     boxShadow: "0 2px 8px rgba(105, 126, 80, 0.1)",
-
     "&:hover": {
       "& .skill-icon": {
-        transform: "scale(1.1) rotate(5deg)",
+        transform: "scale(1.1) rotate(7deg)",
       },
     },
     [theme.breakpoints.down("sm")]: {

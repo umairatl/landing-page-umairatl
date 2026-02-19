@@ -81,7 +81,7 @@ export default function MobileNavbar() {
         position="static"
         elevation={0}
         sx={{
-          bgcolor: "transparent",
+          bgcolor: "#ffff",
           padding: "0.2rem 0.1rem",
           borderBottom: "2px solid #3A5202",
         }}
@@ -113,10 +113,7 @@ export default function MobileNavbar() {
         {/* Menu content */}
         <Box className={classes.menuContent}>
           {NAVBAR_OPTONS.map((res, index) => (
-            <MenuItem
-              key={index}
-              onClick={() => onClickLink(res.link)}
-            >
+            <MenuItem key={index} onClick={() => onClickLink(res.link)}>
               <Typography sx={{ fontFamily: "'Patrick Hand', cursive" }}>
                 {res.title}
               </Typography>
