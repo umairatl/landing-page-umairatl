@@ -57,6 +57,16 @@ const useStyles = makeStyles()((theme) => ({
     transition: "opacity 0.4s ease",
   },
 
+  profileImg: {
+    transition: "filter 0.5s ease",
+    filter: "blur(8px)",
+    borderRadius: "50%",
+  },
+
+  profileImgLoaded: {
+    filter: "blur(0)",
+  },
+
   bounceIcon: {
     color: "#697e50",
     animation: "$nudge 1.6s ease-in-out infinite",
@@ -68,13 +78,14 @@ const useStyles = makeStyles()((theme) => ({
   },
 }));
 
-const skills = ["RectJS/Native", "NextJs", "AngularJs", "Typescript"];
+const skills = ["RectJS/Native", "NextJs", "Typescript"];
 
 export default function CoverLetter({ onOpen }) {
   const projectCount = PROJECTS_LIST.length;
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
 
   const [showHint, setShowHint] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
   const wrapBoxRef = useRef(null);
 
   // Only show the hint if the content actually overflows the card
@@ -151,7 +162,14 @@ export default function CoverLetter({ onOpen }) {
             alignItems="center"
           >
             <Grid item xs={12} mb={2}>
-              <img src={Img} width="100" height="100" alt="profile" />
+              <img
+                src={Img}
+                width="100"
+                height="100"
+                alt="profile"
+                className={cx(classes.profileImg, imgLoaded && classes.profileImgLoaded)}
+                onLoad={() => setImgLoaded(true)}
+              />
             </Grid>
 
             <Grid item xs={12}>

@@ -1,9 +1,7 @@
-import Amiibo from "../asset/img/amiibo.png";
 import CryptownImg1 from "../asset/img/cryptownImg1.png";
-import Yummly from "../asset/img/mobDev.png";
 import MoneyMatch from "../asset/img/moneymatchco.png";
+import CCRisk from "../asset/img/project_cc_risk.png";
 import Mobile1 from "../asset/img/reactnative.png";
-import CCRisk from "../asset/img/project-cc-risk.png";
 
 export const PROJECTS_LIST = [
   {
@@ -46,24 +44,24 @@ export const PROJECTS_LIST = [
     period: "2022",
     stack: ["ReactJs", "AOS", "AWS"],
   },
-  {
-    img: Amiibo,
-    website: "Amiibo Series Web App ",
-    subtitle:
-      "Group project, an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
-    linkType: "Github repository",
-    repo: "https://github.com/umairatl/besquare-fe-hackathon",
-    period: "2022",
-    stack: ["ReactJs", "Amiibo API"],
-  },
-  {
-    img: Yummly,
-    website: "Food Recipe App ",
-    subtitle:
-      "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
-    linkType: "Github Repository",
-    repo: "https://github.com/umairatl/team3b-FEhackathon",
-    period: "2022",
-    stack: ["Flutter", "Dart", "Yummly Rapid API"],
-  },
+  // {
+  //   img: Amiibo,
+  //   website: "Amiibo Series Web App ",
+  //   subtitle:
+  //     "Group project, an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
+  //   linkType: "Github repository",
+  //   repo: "https://github.com/umairatl/besquare-fe-hackathon",
+  //   period: "2022",
+  //   stack: ["ReactJs", "Amiibo API"],
+  // },
+  // {
+  //   img: Yummly,
+  //   website: "Food Recipe App ",
+  //   subtitle:
+  //     "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
+  //   linkType: "Github Repository",
+  //   repo: "https://github.com/umairatl/team3b-FEhackathon",
+  //   period: "2022",
+  //   stack: ["Flutter", "Dart", "Yummly Rapid API"],
+  // },
 ];

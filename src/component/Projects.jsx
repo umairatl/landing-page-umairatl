@@ -167,7 +167,6 @@ const useStyles = makeStyles()((theme) => ({
 
 const Projects = () => {
   const { classes } = useStyles();
-  const theme = useTheme();
 
   return (
     <Box mt={7} className={classes.wrapBox}>

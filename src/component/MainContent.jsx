@@ -37,9 +37,12 @@ const useStyles = makeStyles()((theme) => ({
     marginBottom: 35,
     padding: "1rem 5rem",
     boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+    [theme.breakpoints.up("lg")]: {
+      width: "80%",
+    },
     [theme.breakpoints.down("lg")]: {
       padding: "1rem 3rem",
-      width: "95%",
+      width: "90%",
     },
     [theme.breakpoints.down("md")]: {
       margin: "0px 0px",

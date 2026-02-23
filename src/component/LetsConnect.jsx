@@ -1,22 +1,20 @@
-import {
-  Box,
-  TextField,
-  Button,
-  Stack,
-  Grid,
-  Typography,
-  Alert,
-  Fade,
-  Paper,
-  Link,
-} from "@mui/material";
-import { makeStyles } from "tss-react/mui";
 import { useForm, ValidationError } from "@formspree/react";
-import { useState } from "react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import {
+  Alert,
+  Box,
+  Button,
+  Fade,
+  Grid,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+import { makeStyles } from "tss-react/mui";
 import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
@@ -202,48 +200,10 @@ const ConnectForm = () => {
             }}
           >
             I'm always down to talk about frontend, cool ideas, or what you're
-            building. If you want to collaborate, chat tech, or hire me, feel
-            free to drop me a message.
+            building. If you want to collaborate, chat tech, feel free to drop
+            me a message.
           </Typography>
         </Box>
-
-        {/* Quick Contact Methods */}
-        {/* <Grid container spacing={2} sx={{ mb: 4 }} justifyContent="center">
-          {contactMethods.map((method, index) => (
-            <Grid item xs={12} sm={4} md={3} key={index}>
-              <Link
-                href={method.link}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-              >
-                <Box className={classes.contactCard}>
-                  {method.icon}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: "'Patrick Hand', cursive",
-                      fontWeight: 600,
-                      color: "#A10142",
-                      mt: 0.5,
-                    }}
-                  >
-                    {method.label}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      fontFamily: "'Patrick Hand', cursive",
-                      color: "text.secondary",
-                    }}
-                  >
-                    {method.value}
-                  </Typography>
-                </Box>
-              </Link>
-            </Grid>
-          ))}
-        </Grid> */}
 
         {/* Divider */}
         <Box sx={{ textAlign: "center", my: 3 }}>

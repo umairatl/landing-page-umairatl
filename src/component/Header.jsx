@@ -60,8 +60,8 @@ const useStyles = makeStyles()((theme) => ({
     height: "auto",
     display: "block",
     borderRadius: "14px",
-    opacity: 0,
-    transition: "opacity 0.5s ease",
+    filter: "blur(12px)",
+    transition: "filter 0.5s ease",
     // Mobile: fixed height with cover so the banner fills the box
     [theme.breakpoints.down("md")]: {
       height: "100%",
@@ -72,7 +72,7 @@ const useStyles = makeStyles()((theme) => ({
   },
 
   imgVisible: {
-    opacity: 1,
+    filter: "blur(0)",
   },
 }));
 
@@ -111,8 +111,8 @@ const Header = () => {
               data-aos-duration={500}
               data-aos-delay={100}
             >
-              People call me Umaira/Begum...of course in any pronunciation they
-              prefer. I'm passionate about building frontend web and mobile apps
+              Hi I'm Umaira. People call me Begum too (in any pronunciation they
+              prefer) I'm passionate about building frontend web and mobile apps
               with React, React Native, and Next.js. Currently exploring java
               spring boot and native mobile (mostly learning, experimenting, and
               occasionally confusing myself).
@@ -154,7 +154,7 @@ const Header = () => {
           </Grid>
         </Grid>
 
-        {/* Image — space reserved before load, fades in when ready */}
+        {/* Image — always takes up space, sharpens in once loaded */}
         <Grid item xs={12} md={5} data-aos="fade-left" data-aos-duration={600}>
           <Box className={classes.imgContainer}>
             <picture>
