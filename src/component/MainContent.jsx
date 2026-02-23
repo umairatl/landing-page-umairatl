@@ -32,6 +32,7 @@ const useStyles = makeStyles()((theme) => ({
   },
   wrapGrid: {
     width: 1300,
+    backgroundColor: "#f2ede6",
     backgroundImage: `url(${background})`,
     marginTop: 35,
     marginBottom: 35,

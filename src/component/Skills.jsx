@@ -1,19 +1,21 @@
 import { ContentSize } from "./shared/ContentSize";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import Divider from "@mui/material/Divider";
 import { MAIN_SKILLS } from "../constant/skills";
 
+const LINE_H = "2.3rem";
+
 const useStyles = makeStyles()((theme) => ({
-  divider: {
-    border: "0.7px solid #697e50",
-  },
   sectionHeader: {
     position: "relative",
     display: "inline-block",
     padding: "0.5rem 1.5rem",
+    background: "rgba(255, 255, 255, 0.8)",
+    border: "2px dashed #A10142",
+    borderRadius: "20px",
     marginBottom: "1rem",
-
+    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+    backdropFilter: "blur(5px)",
     "&::before": {
       content: '""',
       position: "absolute",
@@ -26,112 +28,211 @@ const useStyles = makeStyles()((theme) => ({
       zIndex: -1,
     },
   },
-  skillItemGreen: {
-    width: "90%",
-    padding: "0.75rem 1rem",
-    borderRadius: "12px",
-    cursor: "default",
-    background: "rgba(255, 255, 255, 0.8)",
-    borderLeft: "4px solid #697e50",
-    borderBottom: "2px solid #697e50",
-    borderTop: "2px dashed #697e50",
-    borderRight: "2px dashed #697e50",
-    boxShadow: "0 2px 8px rgba(105, 126, 80, 0.1)",
-    "&:hover": {
-      "& .skill-icon": {
-        transform: "scale(1.1) rotate(7deg)",
-      },
-    },
+  notepad: {
+    position: "relative",
+    maxWidth: "520px",
+    width: "100%",
+    backgroundColor: "#fafaf6",
+    backgroundImage: `repeating-linear-gradient(
+      transparent,
+      transparent calc(${LINE_H} - 1px),
+      #dde3ec calc(${LINE_H} - 1px),
+      #dde3ec ${LINE_H}
+    )`,
+    border: "1px solid #d1d5db",
+    borderRadius: "4px",
+    boxShadow: "3px 4px 0 #d1d5db, 0 6px 20px rgba(0,0,0,0.07)",
+    overflow: "hidden",
+    paddingLeft: "3.2rem",
+    paddingRight: "1rem",
+    paddingTop: "0.4rem",
+    paddingBottom: "0.8rem",
+  },
+  marginLine: {
+    position: "absolute",
+    left: "2.8rem",
+    top: 0,
+    bottom: 0,
+    width: "1.5px",
+    background: "pink",
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      left: "2.5rem",
     },
   },
-  skillIcon: {
-    transition: "transform 0.3s ease",
+  skillRow: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-    border: "2px solid #697e50",
-    background: "rgba(208, 222, 199, 0.3)",
-    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
-    [theme.breakpoints.down("sm")]: {
-      width: "25px",
-      height: "25px",
-    },
+    gap: "0.5rem",
+    height: LINE_H,
+    fontFamily: "'Patrick Hand', cursive",
+    color: "text.secondary",
+    // fontStyle: "italic",
+    fontSize: "1rem",
+    color: "grey",
+  },
+  dash: {
+    color: "#697e50",
+    fontSize: "0.85rem",
+    fontFamily: "'Patrick Hand', cursive",
+    marginRight: "0.1rem",
+    flexShrink: 0,
   },
 }));
 
 export const Skills = () => {
   const { classes } = useStyles();
 
+  const col1 = MAIN_SKILLS.slice(0, 5);
+  const col2 = MAIN_SKILLS.slice(5);
+  const mobileCol = MAIN_SKILLS;
+
   return (
     <ContentSize id="Skills">
-      {/* Top Divider */}
-      <Divider
-        className={classes.divider}
+      {/* Top animated dividers */}
+      <Box
         sx={{
           mt: 7,
           width: "100%",
-          boxShadow: "0px 20px 20px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0px 20px 20px rgba(0,0,0,0.1)",
         }}
-      />
-      <Divider className={classes.divider} sx={{ margin: "0.1rem 0 3rem" }} />
+      >
+        <Box
+          sx={{
+            height: "1.5px",
+            background:
+              "linear-gradient(90deg, #A10142 0%, #c9306e 35%, #f5b8d0 50%, #c9306e 65%, #A10142 100%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmerR 2.5s linear infinite",
+            "@keyframes shimmerR": {
+              "0%": { backgroundPosition: "200% 0" },
+              "100%": { backgroundPosition: "-200% 0" },
+            },
+          }}
+        />
+      </Box>
+      <Box sx={{ margin: "0.15rem 0 3rem" }}>
+        <Box
+          sx={{
+            height: "1.5px",
+            background:
+              "linear-gradient(90deg, #c9306e 0%, #A10142 35%, #f5b8d0 50%, #A10142 65%, #c9306e 100%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmerL 2.5s linear infinite",
+            "@keyframes shimmerL": {
+              "0%": { backgroundPosition: "-200% 0" },
+              "100%": { backgroundPosition: "200% 0" },
+            },
+          }}
+        />
+      </Box>
 
-      {/* Skills Section */}
       <Stack justifyContent="center" alignItems="center" width="100%">
-        {/* Header */}
-        <Box sx={{ textAlign: "center", mb: 2 }}>
+        {/* Header — restored */}
+        <Box sx={{ textAlign: "center", mb: 4 }}>
           <Typography
             variant="h6"
             className={classes.sectionHeader}
+            sx={{ color: "#A10142" }}
+          >
+            👩‍💻 Code Playground
+          </Typography>
+          <Typography
+            variant="subtitle1"
             sx={{
-              color: "#697e50",
+              fontFamily: "'Patrick Hand', cursive",
+              color: "text.primary",
             }}
           >
-            🎨 Code Playground
-          </Typography>
-          <Typography variant="subtitle1" sx={{ color: "text.primary" }}>
-            My main coding focus these days, with some experience sprinkled in
+            The core frameworks and technologies I'm working with as I continue
+            expanding my skill set.
           </Typography>
         </Box>
 
-        {/* Skills Grid */}
-        <Box sx={{ width: "95%" }}>
-          <Grid container spacing={2} justifyContent="center" sx={{ mt: 2 }}>
-            {MAIN_SKILLS.map((skill, index) => (
-              <Grid item xs={6} sm={4} md={3} lg={3} key={index}>
-                <Box className={classes.skillItemGreen}>
-                  <Stack
-                    direction={{ xs: "column", lg: "row" }}
-                    alignItems="center"
-                    spacing={1.5}
+        {/* Notepad */}
+        <Box className={classes.notepad}>
+          {/* Red margin line */}
+          <Box className={classes.marginLine} />
+
+          {/* Two-column skill list */}
+          <Box
+            sx={{
+              display: "grid",
+              // gridTemplateColumns: "1fr 1fr",
+              columnGap: "1.5rem",
+            }}
+          >
+            {/* Column 1 */}
+            <Box>
+              {mobileCol.map((skill, i) => (
+                <Box
+                  key={i}
+                  className={classes.skillRow}
+                  data-aos="fade-up"
+                  data-aos-duration={300}
+                  data-aos-delay={i * 60}
+                >
+                  <span className={classes.dash}>—</span>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: skill.color || "black",
+                      lineHeight: 0,
+                      "& svg": { width: "1.3rem", height: "1.3rem" },
+                    }}
                   >
-                    <Box className={`skill-icon ${classes.skillIcon}`}>
-                      {skill.icon}
-                    </Box>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ color: "text.secondary" }}
-                    >
-                      {skill.type}
-                    </Typography>
-                  </Stack>
+                    {skill.icon}
+                  </Box>
+                  {skill.type}
                 </Box>
-              </Grid>
-            ))}
-          </Grid>
+              ))}
+            </Box>
+            {/* Column 2 */}
+            {/* <Box>
+              {col2.map((skill, i) => (
+                <Box key={i} className={classes.skillRow}>
+                  <span className={classes.dash}>—</span>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#A10142",
+                      lineHeight: 0,
+                    }}
+                  >
+                    {skill.icon}
+                  </Box>
+                  {skill.type}
+                </Box>
+              ))}
+            </Box> */}
+          </Box>
         </Box>
       </Stack>
 
-      {/* Bottom Divider */}
-      <Divider className={classes.divider} sx={{ margin: "3rem 0 0.1rem" }} />
-      <Divider
-        className={classes.divider}
-        sx={{ width: "100%", boxShadow: "0px 20px 20px rgba(0, 0, 0, 0.1)" }}
-      />
+      {/* Bottom animated dividers */}
+      <Box sx={{ margin: "3rem 0 0.15rem" }}>
+        <Box
+          sx={{
+            height: "1.5px",
+            background:
+              "linear-gradient(90deg, #c9306e 0%, #A10142 35%, #f5b8d0 50%, #A10142 65%, #c9306e 100%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmerR 2.5s linear infinite",
+          }}
+        />
+      </Box>
+      <Box sx={{ width: "100%", boxShadow: "0px 20px 20px rgba(0,0,0,0.1)" }}>
+        <Box
+          sx={{
+            height: "1.5px",
+            background:
+              "linear-gradient(90deg, #A10142 0%, #c9306e 35%, #f5b8d0 50%, #c9306e 65%, #A10142 100%)",
+            backgroundSize: "200% 100%",
+            animation: "shimmerL 2.5s linear infinite",
+          }}
+        />
+      </Box>
     </ContentSize>
   );
 };

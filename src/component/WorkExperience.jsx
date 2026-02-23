@@ -63,7 +63,9 @@ const useStyles = makeStyles()((theme) => ({
       border: "3px solid #697e50",
       zIndex: 2,
       transition: "all 0.3s ease",
-      [theme.breakpoints.down("md")]: { display: "none" },
+      [theme.breakpoints.down("md")]: {
+        left: -20,
+      },
     },
     "&:hover": {
       background: "rgba(255, 255, 255, 0.95)",
@@ -88,7 +90,9 @@ const useStyles = makeStyles()((theme) => ({
     width: "2px",
     background:
       "linear-gradient(to bottom, #D0DEC7 0%, #697e50 50%, #D0DEC7 100%)",
-    [theme.breakpoints.down("md")]: { display: "none" },
+    [theme.breakpoints.down("md")]: {
+      left: -15,
+    },
   },
   sectionHeader: {
     position: "relative",
@@ -149,7 +153,7 @@ const WorkExperience = () => {
               color: "text.primary",
             }}
           >
-            📋 Click on the box to view more details
+            📋 Click on the box to view more details*
           </Typography>
         </Grid>
 

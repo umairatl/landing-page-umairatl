@@ -7,7 +7,7 @@ const WorkDialog = ({ details, handleClose }) => {
   const { img, company, period, details: detailInfo } = details;
 
   return (
-    <Box sx={{ p: { xs: 3, sm: 4 }, background: "#F7EEED" }}>
+    <Box sx={{ p: { xs: 3, sm: 4 }, background: "#ffff" }}>
       <Grid container rowGap={1}>
         {/* Close Button */}
         <Grid item xs={12} textAlign="right">

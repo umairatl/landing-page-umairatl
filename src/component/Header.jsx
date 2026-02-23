@@ -111,11 +111,11 @@ const Header = () => {
               data-aos-duration={500}
               data-aos-delay={100}
             >
-              Hi I'm Umaira. People call me Begum too (in any pronunciation they
-              prefer) I'm passionate about building frontend web and mobile apps
-              with React, React Native, and Next.js. Currently exploring java
-              spring boot and native mobile (mostly learning, experimenting, and
-              occasionally confusing myself).
+              Hi I'm Umaira. People call me Begum too (but in any pronunciation
+              they prefer) I'm passionate about building frontend web and mobile
+              apps with React, React Native, and Next.js. Currently exploring
+              java spring boot and native mobile (mostly learning,
+              experimenting, and occasionally confusing myself).
             </Typography>
 
             <Typography

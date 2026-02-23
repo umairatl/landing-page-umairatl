@@ -157,7 +157,7 @@ const Recommendations = () => {
                   color: "#3A5202",
                 }}
               >
-                💬 Feedback & Recommendations
+                💬 LinkedIn Recommendations
               </Typography>
               <Typography
                 variant="subtitle1"
@@ -175,7 +175,12 @@ const Recommendations = () => {
                     cursor: "pointer",
                     whiteSpace: "nowrap", // This prevents LinkedIn and the icon from splitting
                   }}
-                  onClick={() => window.open("https://www.linkedin.com/in/umairatul-asyiqin-1b43271a8/", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/umairatul-asyiqin-1b43271a8/",
+                      "_blank",
+                    )
+                  }
                 >
                   LinkedIn
                   <LaunchIcon

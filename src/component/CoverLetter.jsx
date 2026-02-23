@@ -15,10 +15,10 @@ const useStyles = makeStyles()((theme) => ({
     height: "100%",
     overflowY: "auto",
     textAlign: "center",
+    backgroundColor: "#f5f0e8",
     backgroundImage: `url(${crumplePaper})`,
     backgroundSize: "480px 710px",
     backgroundPosition: "center",
-    backgroundColor: "transparent",
     "&::-webkit-scrollbar": {
       width: "6px",
     },

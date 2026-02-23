@@ -1,9 +1,9 @@
 import { Box, Card, Grid, Link, Stack, Typography, Chip } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { makeStyles } from "tss-react/mui";
 import { ContentSize } from "./shared/ContentSize";
 import { PROJECTS_LIST } from "../constant/projects";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles()((theme) => ({
     backgroundColor: "rgba(255, 255, 255, 0.7)",
     backdropFilter: "blur(5px)",
     border: "1px dashed rgba(105, 126, 80, 0.3)",
-    transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)", // Bouncy effect!
+    transition: "background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease",
     overflow: "hidden",
     height: "100%",
     boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
@@ -64,7 +64,6 @@ const useStyles = makeStyles()((theme) => ({
     },
 
     "&:hover": {
-      transform: "translateY(-12px) scale(1.03)", // More dramatic lift!
       backgroundColor: "rgba(255, 255, 255, 0.98)",
       border: "2px dashed #697e50", // Thicker border on hover
       boxShadow: "0 16px 40px rgba(105, 126, 80, 0.25)", // Bigger shadow
@@ -205,6 +204,11 @@ const Projects = () => {
                 className={classes.link}
                 sx={{ display: "block", height: "100%" }}
               >
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  style={{ height: "100%" }}
+                >
                 <Card
                   className={classes.projectCard}
                   elevation={0}
@@ -323,6 +327,7 @@ const Projects = () => {
                     </Typography>
                   </Box>
                 </Card>
+                </motion.div>
               </Link>
             </Grid>
           ))}
