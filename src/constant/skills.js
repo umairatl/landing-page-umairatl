@@ -187,7 +187,3 @@ export const MAIN_SKILLS = [
     type: "Git",
   },
 ];
-
-// https://fonts.google.com/specimen/Shadows+Into+Light?preview.text=Javascript
-// https://fonts.google.com/specimen/Reenie+Beanie?preview.text=Javascript
-// https://fonts.google.com/specimen/Patrick+Hand?preview.text=Javascript

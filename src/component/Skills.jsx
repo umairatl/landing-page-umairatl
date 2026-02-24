@@ -54,7 +54,7 @@ const useStyles = makeStyles()((theme) => ({
     top: 0,
     bottom: 0,
     width: "1.5px",
-    background: "pink",
+    background: "rgba(161,1,66,0.35)",
     [theme.breakpoints.down("sm")]: {
       left: "2.5rem",
     },
@@ -65,8 +65,6 @@ const useStyles = makeStyles()((theme) => ({
     gap: "0.5rem",
     height: LINE_H,
     fontFamily: "'Patrick Hand', cursive",
-    color: "text.secondary",
-    // fontStyle: "italic",
     fontSize: "1rem",
     color: "grey",
   },
@@ -82,8 +80,6 @@ const useStyles = makeStyles()((theme) => ({
 export const Skills = () => {
   const { classes } = useStyles();
 
-  const col1 = MAIN_SKILLS.slice(0, 5);
-  const col2 = MAIN_SKILLS.slice(5);
   const mobileCol = MAIN_SKILLS;
 
   return (
@@ -100,7 +96,7 @@ export const Skills = () => {
           sx={{
             height: "1.5px",
             background:
-              "linear-gradient(90deg, #A10142 0%, #c9306e 35%, #f5b8d0 50%, #c9306e 65%, #A10142 100%)",
+              "linear-gradient(90deg, rgba(161,1,66,0.5) 0%, rgba(161,1,66,0.25) 35%, rgba(255,220,235,0.5) 50%, rgba(161,1,66,0.25) 65%, rgba(161,1,66,0.5) 100%)",
             backgroundSize: "200% 100%",
             animation: "shimmerR 2.5s linear infinite",
             "@keyframes shimmerR": {
@@ -115,7 +111,7 @@ export const Skills = () => {
           sx={{
             height: "1.5px",
             background:
-              "linear-gradient(90deg, #c9306e 0%, #A10142 35%, #f5b8d0 50%, #A10142 65%, #c9306e 100%)",
+              "linear-gradient(90deg, rgba(161,1,66,0.2) 0%, rgba(161,1,66,0.5) 35%, rgba(255,220,235,0.5) 50%, rgba(161,1,66,0.5) 65%, rgba(161,1,66,0.2) 100%)",
             backgroundSize: "200% 100%",
             animation: "shimmerL 2.5s linear infinite",
             "@keyframes shimmerL": {
@@ -153,59 +149,30 @@ export const Skills = () => {
           {/* Red margin line */}
           <Box className={classes.marginLine} />
 
-          {/* Two-column skill list */}
-          <Box
-            sx={{
-              display: "grid",
-              // gridTemplateColumns: "1fr 1fr",
-              columnGap: "1.5rem",
-            }}
-          >
-            {/* Column 1 */}
-            <Box>
-              {mobileCol.map((skill, i) => (
+          <Box>
+            {mobileCol.map((skill, i) => (
+              <Box
+                key={i}
+                className={classes.skillRow}
+                data-aos="fade-up"
+                data-aos-duration={300}
+                data-aos-delay={i * 60}
+              >
+                <span className={classes.dash}>—</span>
                 <Box
-                  key={i}
-                  className={classes.skillRow}
-                  data-aos="fade-up"
-                  data-aos-duration={300}
-                  data-aos-delay={i * 60}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: skill.color || "black",
+                    lineHeight: 0,
+                    "& svg": { width: "1.3rem", height: "1.3rem" },
+                  }}
                 >
-                  <span className={classes.dash}>—</span>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      color: skill.color || "black",
-                      lineHeight: 0,
-                      "& svg": { width: "1.3rem", height: "1.3rem" },
-                    }}
-                  >
-                    {skill.icon}
-                  </Box>
-                  {skill.type}
+                  {skill.icon}
                 </Box>
-              ))}
-            </Box>
-            {/* Column 2 */}
-            {/* <Box>
-              {col2.map((skill, i) => (
-                <Box key={i} className={classes.skillRow}>
-                  <span className={classes.dash}>—</span>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      color: "#A10142",
-                      lineHeight: 0,
-                    }}
-                  >
-                    {skill.icon}
-                  </Box>
-                  {skill.type}
-                </Box>
-              ))}
-            </Box> */}
+                {skill.type}
+              </Box>
+            ))}
           </Box>
         </Box>
       </Stack>
@@ -216,7 +183,7 @@ export const Skills = () => {
           sx={{
             height: "1.5px",
             background:
-              "linear-gradient(90deg, #c9306e 0%, #A10142 35%, #f5b8d0 50%, #A10142 65%, #c9306e 100%)",
+              "linear-gradient(90deg, rgba(161,1,66,0.2) 0%, rgba(161,1,66,0.5) 35%, rgba(255,220,235,0.5) 50%, rgba(161,1,66,0.5) 65%, rgba(161,1,66,0.2) 100%)",
             backgroundSize: "200% 100%",
             animation: "shimmerR 2.5s linear infinite",
           }}
@@ -227,7 +194,7 @@ export const Skills = () => {
           sx={{
             height: "1.5px",
             background:
-              "linear-gradient(90deg, #A10142 0%, #c9306e 35%, #f5b8d0 50%, #c9306e 65%, #A10142 100%)",
+              "linear-gradient(90deg, rgba(161,1,66,0.5) 0%, rgba(161,1,66,0.25) 35%, rgba(255,220,235,0.5) 50%, rgba(161,1,66,0.25) 65%, rgba(161,1,66,0.5) 100%)",
             backgroundSize: "200% 100%",
             animation: "shimmerL 2.5s linear infinite",
           }}

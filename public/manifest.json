@@ -1,9 +1,9 @@
 {
-  "short_name": "Umairatul Portfolio",
+  "short_name": "Umairatul's Portfolio",
   "name": "umairatl",
   "icons": [
     {
-      "src": "header2.png",
+      "src": "headerImg.png",
       "type": "image/png",
       "sizes": "192x192"
     }

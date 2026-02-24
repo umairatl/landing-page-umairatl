@@ -44,10 +44,9 @@ const useStyles = makeStyles()(() => ({
   },
 
   link: {
-    color: "#697e50",
+    color: "black",
     fontFamily: "'Patrick Hand', cursive",
     fontWeight: 600,
-    fontSize: "1rem",
     padding: "0.65rem 1.2rem",
     borderRadius: "8px",
     transition: "all 0.2s ease",
@@ -202,7 +201,7 @@ export default function MobileNavbar() {
               className={classes.link}
               onClick={() => onClickLink(res.link)}
             >
-              {res.title}
+              <Typography variant="subtitle1">{res.title}</Typography>
             </Box>
           ))}
         </Box>

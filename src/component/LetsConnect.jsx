@@ -1,8 +1,5 @@
 import { useForm, ValidationError } from "@formspree/react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {
   Alert,
   Box,
@@ -157,27 +154,6 @@ const ConnectForm = () => {
   const handleMessageChange = (e) => {
     setCharCount(e.target.value.length);
   };
-
-  const contactMethods = [
-    {
-      icon: <EmailOutlinedIcon sx={{ fontSize: 28, color: "#A10142" }} />,
-      label: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com",
-    },
-    {
-      icon: <LinkedInIcon sx={{ fontSize: 28, color: "#A10142" }} />,
-      label: "LinkedIn",
-      value: "/yourprofile",
-      link: "https://linkedin.com/in/yourprofile",
-    },
-    {
-      icon: <GitHubIcon sx={{ fontSize: 28, color: "#A10142" }} />,
-      label: "GitHub",
-      value: "@yourusername",
-      link: "https://github.com/yourusername",
-    },
-  ];
 
   return (
     <ContentSize>

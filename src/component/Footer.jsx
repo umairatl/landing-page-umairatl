@@ -1,9 +1,8 @@
-import { Grid, Typography, Stack, Link } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Grid, Link, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import { ContentSize } from "./shared/ContentSize";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
 
 const useStyles = makeStyles()((theme) => ({
   wrapFooter: {
@@ -38,8 +37,7 @@ const Footer = () => {
       >
         <Grid item>
           <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-            © 2026 Designed and developed by umairatl. Built with ReactJs, MUI,
-            AOS
+            © 2026 Designed and developed by umairatl. Built with ReactJs
           </Typography>
         </Grid>
         <Grid item>
@@ -53,9 +51,6 @@ const Footer = () => {
             <Link href="https://github.com/umairatl" className={classes.link}>
               <GitHubIcon />
             </Link>
-            {/* <Link href="mailto:umairatlwork@gmail.com" className={classes.link}>
-              <EmailIcon />
-            </Link> */}
           </Stack>
         </Grid>
       </Grid>

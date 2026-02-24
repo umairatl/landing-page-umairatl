@@ -9,17 +9,18 @@ export const feedback = [
   },
   {
     img: feedbackImg,
-    name: "Dharisini Kanesamoorthy",
-    position: "Product Designer",
-    feedback: `Umairatul worked with me on project when we were trainees. She is one of the sweetest people I know, and this translates into her work as well. She is always willing to go above and beyond to help her colleagues, and takes the time to listen and understand their needs. Her willingness to constantly study and improve herself is evident in her work, as she is always looking for ways to enhance her skills and knowledge. She is always resourceful!! One thing that always stood out to me about umairatul was her ability to network with seniors and learn from their experiences. I remember a time when we were working on a react js website, and there was a minor issue that we were struggling to solve. She took the initiative to talk to some senior developers in our company, and through these conversations she was able to learn some new concepts and apply them to the project. This was a great example of her proactive attitude and willingness to learn and improve.`,
-  },
-  {
-    img: feedbackImg,
     name: "Jeremy Nathan",
     position: " Full Stack Software Engineer",
     feedback:
       "It’s a pleasure working with Umairatul on projects involving both front-end and back-end engineers. She has a very collaborative spirit and a proactive attitude towards the team. Her work in the front-end domain is also truly impressive and one of the best that I have ever seen. She’s also very adept in dealing with the numerous challenges that came across her. Apart from that, Umairatul as a person, brings a cheery vibe to the team and not just myself, but everyone, enjoys conversing with her.",
   },
+  {
+    img: feedbackImg,
+    name: "Dharisini Kanesamoorthy",
+    position: "Product Designer",
+    feedback: `Umairatul worked with me on project when we were trainees. She is one of the sweetest people I know, and this translates into her work as well. She is always willing to go above and beyond to help her colleagues, and takes the time to listen and understand their needs. Her willingness to constantly study and improve herself is evident in her work, as she is always looking for ways to enhance her skills and knowledge. She is always resourceful!! One thing that always stood out to me about umairatul was her ability to network with seniors and learn from their experiences. I remember a time when we were working on a react js website, and there was a minor issue that we were struggling to solve. She took the initiative to talk to some senior developers in our company, and through these conversations she was able to learn some new concepts and apply them to the project. This was a great example of her proactive attitude and willingness to learn and improve.`,
+  },
+
   {
     img: feedbackImg,
     name: "Edward Kong",

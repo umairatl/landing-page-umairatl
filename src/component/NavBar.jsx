@@ -1,6 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-// import img from "../asset/img/header2.png";
 import img from "../asset/img/headerImg2.png";
 import { NAVBAR_OPTONS } from "../constant/navbar";
 import { downloadPDF } from "../helper/downloadPdf";
@@ -14,7 +13,7 @@ const useStyles = makeStyles()((theme) => ({
     borderTop: "1px dashed #697e50",
     borderRight: "1px dashed #697e50",
     borderBottom: "3px solid #697e50",
-    borderLeft: "3px solid #69S7e50",
+    borderLeft: "3px solid #697e50",
     borderRadius: "50px",
     padding: "0.8rem 2rem",
     boxShadow: "0 6px 20px rgba(105, 126, 80, 0.15)",

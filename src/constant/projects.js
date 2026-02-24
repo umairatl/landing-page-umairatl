@@ -44,24 +44,4 @@ export const PROJECTS_LIST = [
     period: "2022",
     stack: ["ReactJs", "AOS", "AWS"],
   },
-  // {
-  //   img: Amiibo,
-  //   website: "Amiibo Series Web App ",
-  //   subtitle:
-  //     "Group project, an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
-  //   linkType: "Github repository",
-  //   repo: "https://github.com/umairatl/besquare-fe-hackathon",
-  //   period: "2022",
-  //   stack: ["ReactJs", "Amiibo API"],
-  // },
-  // {
-  //   img: Yummly,
-  //   website: "Food Recipe App ",
-  //   subtitle:
-  //     "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
-  //   linkType: "Github Repository",
-  //   repo: "https://github.com/umairatl/team3b-FEhackathon",
-  //   period: "2022",
-  //   stack: ["Flutter", "Dart", "Yummly Rapid API"],
-  // },
 ];

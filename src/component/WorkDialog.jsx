@@ -29,12 +29,6 @@ const WorkDialog = ({ details, handleClose }) => {
             <strong>Company:</strong> {company} ({period})
           </Typography>
 
-          {/* {detailInfo.project && (
-            <Typography variant="body2" sx={{ mt: 1 }}>
-              <strong>Project:</strong> {detailInfo.project}
-            </Typography>
-          )} */}
-
           <Typography variant="body2" sx={{ mt: 1, fontWeight: "bold" }}>
             Description:
           </Typography>

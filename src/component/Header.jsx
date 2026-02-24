@@ -34,9 +34,9 @@ const useStyles = makeStyles()((theme) => ({
     position: "relative", // needed for the overlay to anchor to
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(208, 222, 199, 0.2)",
+    backgroundColor: "rgba(105, 126, 80, 0.08)",
     borderRadius: "16px",
-    border: "1.5px dashed rgba(105, 126, 80, 0.35)",
+    border: "1.5px dashed #697e50",
     [theme.breakpoints.down("md")]: {
       overflow: "hidden",
       marginBottom: "40px",
@@ -111,11 +111,11 @@ const Header = () => {
               data-aos-duration={500}
               data-aos-delay={100}
             >
-              Hi I'm Umaira. People call me Begum too (but in any pronunciation
-              they prefer) I'm passionate about building frontend web and mobile
-              apps with React, React Native, and Next.js. Currently exploring
-              java spring boot and native mobile (mostly learning,
-              experimenting, and occasionally confusing myself).
+              Hi, I’m Umaira. Some call me Begum (pronounce it however you
+              like). I build web and mobile apps with React, React Native, and
+              Next.js. Lately I've been exploring Java Spring Boot and diving
+              deeper into mobile dev (mostly learning, experimenting, and
+              occasionally confusing myself).
             </Typography>
 
             <Typography
@@ -164,7 +164,7 @@ const Header = () => {
                 className={cx(classes.img, imgLoaded && classes.imgVisible)}
                 alt="profile banner"
                 loading="eager"
-                fetchPriority="high"
+                fetchpriority="high"
                 draggable={false}
                 onContextMenu={(e) => e.preventDefault()}
                 onLoad={() => setImgLoaded(true)}
