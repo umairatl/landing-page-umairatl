@@ -2,21 +2,20 @@ import { useState } from "react";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import Img from "../asset/img/header8.png";
-import MobileImg from "../asset/img/mobileHeaderBanner.png";
 import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
   btn: {
     width: "100%",
     padding: "8px 0px",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "11px 0px",
     },
   },
   wrapGridHeader: {
     flexDirection: "row",
     marginTop: 25,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "column-reverse",
       marginTop: 0,
     },
@@ -29,22 +28,21 @@ const useStyles = makeStyles()((theme) => ({
     },
   },
 
-  // Reserves rough space before the image loads, then expands to natural size
   imgContainer: {
-    position: "relative", // needed for the overlay to anchor to
+    position: "relative",
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(105, 126, 80, 0.08)",
     borderRadius: "16px",
     border: "1.5px dashed #697e50",
-    [theme.breakpoints.down("md")]: {
-      overflow: "hidden",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
       marginBottom: "40px",
     },
   },
 
-  // Transparent layer that sits above the image.
-  // Right-clicking it shows the generic page menu (no "Save image as").
   imgOverlay: {
     position: "absolute",
     inset: 0,
@@ -55,18 +53,13 @@ const useStyles = makeStyles()((theme) => ({
   },
 
   img: {
-    // Desktop: full natural size, no crop
     width: "100%",
     height: "auto",
     display: "block",
     borderRadius: "14px",
     filter: "blur(12px)",
     transition: "filter 0.5s ease",
-    // Mobile: fixed height with cover so the banner fills the box
-    [theme.breakpoints.down("md")]: {
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "top",
+    [theme.breakpoints.down("sm")]: {
       borderRadius: 0,
     },
   },
@@ -88,7 +81,7 @@ const Header = () => {
         className={classes.wrapGridHeader}
       >
         {/* Text content */}
-        <Grid item md={6} xs={12}>
+        <Grid item sm={6} xs={12}>
           <Grid
             container
             direction="column"
@@ -111,11 +104,10 @@ const Header = () => {
               data-aos-duration={500}
               data-aos-delay={100}
             >
-              Hi, I’m Umaira. Some call me Begum (pronounce it however you
-              like). I build web and mobile apps with React, React Native, and
-              Next.js. Lately I've been exploring Java Spring Boot and diving
-              deeper into mobile dev (mostly learning, experimenting, and
-              occasionally confusing myself).
+              Hi, I'm Umaira. Some call me Begum. I build web and mobile apps
+              with React, React Native, and Next.js. Lately I've been exploring
+              and diving deeper into mobile dev (mostly learning, experimenting,
+              and occasionally confusing myself).
             </Typography>
 
             <Typography
@@ -125,8 +117,9 @@ const Header = () => {
               data-aos-duration={500}
               data-aos-delay={200}
             >
-              Outside of code, I write, I enjoy 8oz matcha a lot 🍵, and I like
-              to wander malls with parks or rooftops just for the fun of it.
+              Outside of code, I write, drink an embarrassing amount of matcha,
+              and and lately been trying to get more active (still figuring out
+              which version of that sticks.)
             </Typography>
             <Stack
               className={classes.stackBtn}
@@ -154,25 +147,19 @@ const Header = () => {
           </Grid>
         </Grid>
 
-        {/* Image — always takes up space, sharpens in once loaded */}
-        <Grid item xs={12} md={5} data-aos="fade-left" data-aos-duration={600}>
+        {/* Image */}
+        <Grid item xs={12} sm={5} data-aos="fade-left" data-aos-duration={600}>
           <Box className={classes.imgContainer}>
-            <picture>
-              <source media="(min-width: 768px)" srcSet={Img} />
-              <img
-                src={MobileImg}
-                className={cx(classes.img, imgLoaded && classes.imgVisible)}
-                alt="profile banner"
-                loading="eager"
-                fetchpriority="high"
-                draggable={false}
-                onContextMenu={(e) => e.preventDefault()}
-                onLoad={() => setImgLoaded(true)}
-              />
-            </picture>
-
-            {/* Transparent overlay — intercepts right-click so browser shows the
-                generic page menu instead of the image "Save image as" option */}
+            <img
+              src={Img}
+              className={cx(classes.img, imgLoaded && classes.imgVisible)}
+              alt="profile banner"
+              loading="eager"
+              fetchpriority="high"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+              onLoad={() => setImgLoaded(true)}
+            />
             <Box
               className={classes.imgOverlay}
               onContextMenu={(e) => e.preventDefault()}

@@ -1,4 +1,4 @@
-import pdfLink from "../asset/file/resume-2026.pdf";
+import pdfLink from "../asset/file/Umairatul_Asyiqin_Resume_2026.pdf";
 
 export const downloadPDF = () => {
   var link = document.createElement("a");

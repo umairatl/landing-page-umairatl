@@ -48,10 +48,11 @@ const useStyles = makeStyles()((theme) => ({
     [theme.breakpoints.down("md")]: {
       margin: "0px 0px",
       padding: "0px",
-    },
-    [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
+    // [theme.breakpoints.down("sm")]: {
+    //   width: "100%",
+    // },
   },
   backgroundGrid: {
     position: "relative",
